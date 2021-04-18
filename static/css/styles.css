@@ -453,5 +453,7 @@ img{
 }
 
 .bg-container{
-  background-color: #fff;
+  background-image: url('/static/img/bg3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }

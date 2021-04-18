@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'anymail',
     # Meus apps
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
@@ -157,13 +158,20 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_SESSION_REMEMBER = True
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+DEFAULT_FROM_EMAIL = 'no-reply@eliseucorrea.com'
+SEVER_EMAIL = 'contato@eliseucorrea.com'
+ANYMAIL = {
+    'MAILGUN_API_KEY': '',
+    'MAILGUN_SENDER_DOMAIN': 'mg.eliseucorrea.com',
+}
 
 # django-crispy-forms
 
