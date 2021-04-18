@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
 {% block title %}Meu Blog 🐍{% endblock %}
 
@@ -14,6 +14,7 @@
                 Publicado em {{ post.created }} por {{ post.author }}
             </p>
             {{ post.body|linebreaks|truncatewords:10 }}
+
         </article>
     {% endfor %}
 {% endblock %}

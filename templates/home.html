@@ -1,7 +1,153 @@
 {% extends 'base.html' %}
-
-{% block title %}Loja Python{% endblock %}
-
+{% load static %}
 {% block content %}
-    Olá!
+
+<!--===== HOME =====-->
+<section class="home bd-grid" id="home">
+    <div class="home__data">
+        <h1 class="home__title">Olá,<br>Eu sou o <span class="home__title-color">Eliseu</span>,<br>Engenheiro de Dados!
+        </h1>
+
+        <a href="#" class="button">Contato</a>
+    </div>
+
+    <div class="home__social">
+        <a href="" class="home__social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="" class="home__social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="" class="home__social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="" class="home__social-icon"><i class="fa fa-github"></i></a>
+    </div>
+    
+
+    <div class="home__img">
+        <img src="{% static 'img/eliseupc.png' %}" style="border-radius: 20px;" alt="">
+    </div>
+
+</section>
+
+
+<!--===== ABOUT =====-->
+<section class="about section " id="about">
+    <h2 class="section-title">Sobre</h2>
+
+    <div class="about__container bd-grid">
+        <div class="about__img">
+            <img src="{% static 'img/eliseupc.png' %}" style="border-radius: 20px;" alt="">
+        </div>
+
+        <div>
+            <h2 class="about__subtitle">Sou o Eliseu</h2>
+            <p class="about__text" >Formado em Análise e Desenvolvimento de Sistemas, com skills em Python, Java, HTML, CSS, Javascript, SQL, Power BI, frameworks web Django e Flask, Metodologias Ágeis, Git.
+                Prezo sempre por trabalhar em equipe, cooperando com todos e ajudando da melhor maneira possível, 
+                com grande satisfação estou sempre atento ao que cada colega de equipe pode me ensinar e da mesma forma busco compartilhar meus conhecimentos, 
+                assim podendo contribuir por muito tempo à medida que crescemos juntos.</p>
+        </div>
+    </div>
+</section>
+
+<!--===== SKILLS =====-->
+<section class="skills section" id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills__container bd-grid">
+        <div>
+            <h2 class="skills__subtitle">Profesional Skills</h2>
+            <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet,
+                alias architecto consectetur error eum eaque sit.</p>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class="fab fa-html5 skills__icon"></i>
+                    <span class="skills__name">HTML5</span>
+                </div>
+                <div class="skills__bar skills__html">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">20%</span>
+                </div>
+            </div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class="fab fa-css3-alt skills__icon"></i>
+                    <span class="skills__name">CSS3</span>
+                </div>
+                <div class="skills__bar skills__css">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">85%</span>
+                </div>
+            </div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class="fab fa-js skills__icon"></i>
+                    <span class="skills__name">JAVASCRIPT</span>
+                </div>
+                <div class="skills__bar skills__js">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">65%</span>
+                </div>
+            </div>
+            <div class="skills__data">
+                <div class="skills__names">
+                    <i class="fab fa-python skills__icon"></i>
+                    <span class="skills__name">Python</span>
+                </div>
+                <div class="skills__bar skills__ux">
+
+                </div>
+                <div>
+                    <span class="skills__percentage">85%</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <img src="{% static 'img/skills.jpg' %}" alt="" class="skills__img">
+        </div>
+    </div>
+</section>
+
+<!--===== WORK =====-->
+<section class="work section" id="work">
+    <h2 class="section-title">Projetos</h2>
+
+    <div class="work__container bd-grid">
+        <div class="work__img">
+            <img src="{% static 'img/code.jpg' %}" alt="">
+        </div>
+        <div class="work__img">
+            <img src="{% static 'img/code2.jpg' %}" alt="">
+        </div>
+        <div class="work__img">
+            <img src="{% static 'img/code3.jpg' %}" alt="">
+        </div>
+        <div class="work__img">
+            <img src="{% static 'img/code4.jpg' %}" alt="">
+        </div>
+        <div class="work__img">
+            <img src="{% static 'img/dev.jpg' %}" alt="">
+        </div>
+        <div class="work__img">
+            <img src="{% static 'img/macbook.jpg' %}" alt="">
+        </div>
+    </div>
+</section>
+
+<!--===== CONTACT =====-->
+<section class="contact section" id="contact">
+    <h2 class="section-title">Contato</h2>
+
+    <div class="contact__container bd-grid">
+        <form action="" class="contact__form">
+            <input type="text" placeholder="Nome" class="contact__input">
+            <input type="mail" placeholder="Email" class="contact__input">
+            <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+            <input type="button" value="Enviar" class="contact__button button">
+        </form>
+    </div>
+</section>
+
 {% endblock %}

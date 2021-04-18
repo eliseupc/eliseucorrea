@@ -1,43 +1,82 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand navbar-dark bg-dark mb-3">
-            <div class="container">
-                <a class="navbar-brand" href="{% url 'pages:home' %}">Loja Python</a>
-                <ul class="navbar-nav">
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Cadastro</a>
-                    </li>
-                    {% endif %}
-                </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        
+        
+
+        <!-- =====BOX ICONS===== -->
+        <link href="{% static 'css/boxicons.min.css' %}" rel='stylesheet'>
+
+        <title>Eliseu Corrêa</title>
+
+        <link rel="icon" href="{% static 'img/logo.png' %}" height="50" width="50">
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                      <img
+                        src="{% static 'img/logo.png' %}"
+                        height="50"
+                        width="50"
+                        alt=""
+                        loading="lazy" 
+                      />
+                        
+                    </a>
+                  </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Início</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">Sobre</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Trabalho</a></li>
+                        <li class="nav__item"><a href="{% url 'blog:list' %}" class="nav__link">Blog</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        
+        <main class="container bg-container" >
+            {% block content %}
+            {% endblock %}
+        </main>
+         <!--===== FOOTER =====-->
+         <footer class="footer">
+            <p class="footer__title">Eliseu Corrêa</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="footer__icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer__icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="footer__icon"><i class="fa fa-github"></i></a>
+
             </div>
-        </nav>
-    </header>
+            <p>&#169; Eliseu Corrêa 2021</p>
+        </footer>
 
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
+        <!--===== Font Awesome =====-->
+        <script src="https://kit.fontawesome.com/ff75308b0d.js" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
+        <!--===== SCROLL REVEAL =====-->
+        <script src="{% static 'js/scrollreveal.js' %}"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
 </html>
+    

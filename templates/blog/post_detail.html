@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blog/base.html" %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
@@ -7,5 +7,15 @@
     <p class="date">
         Publicado em {{ post.created }} por {{ post.author }}
     </p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="receipe-slider owl-carousel">
+                        <img src="{{ post.foto.url }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     {{ post.body|linebreaks }}
 {% endblock %}

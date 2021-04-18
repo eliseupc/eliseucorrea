@@ -9,8 +9,9 @@ class Post(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
+    foto = models.ImageField(upload_to='fotos/%d/%m/%Y', blank=True)
     created = models.DateField(auto_now_add=True)
-    updated = models.DateField(auto_now=True)
+    updated = models.DateField(auto_now=True)    
 
     class Meta:
         ordering = ("-created",)
